@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Prediction</title>
+</head>
+<body>
+    <h1>Welocome to Expense Prediction</h1>
+    <form method="post">
+        {% csrf_token %}
+        Age: <input type="number" name="age" required ><br>
+        Sex: <input type="number" name="sex" required placeholder="1 for male 0 for female"><br>
+        BMI: <input type="number" name="bmi" required><br>
+        Children: <input type="number" name="children" required><br>
+        Smoker: <input type="number" name="smoker" required placeholder="1 for yes 0 for no"><br>
+        Region: <input type="text" name="region" required ><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h1>Your predict expense will be ${{prediction}}</h1>
+    {% endif %}
+</body>
+</html>
